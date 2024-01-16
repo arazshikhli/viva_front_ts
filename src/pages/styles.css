@@ -1,0 +1,16 @@
+.main {
+    flex: 1 1 auto;
+}
+
+.header {
+    width: 100%;
+    background-color: brown;
+}
+
+.main {
+    background-color: aqua;
+}
+
+.footer {
+    background-color: chocolate;
+}
