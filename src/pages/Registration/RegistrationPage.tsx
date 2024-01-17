@@ -1,10 +1,10 @@
-import { Auth } from "../../components/Auth"
+import { Auth } from "../../components/Auth/Auth"
 import axios from "axios"
 export const RegistrationPage = () => {
 
 
-    return <div className="container">
-        <h3>RegistrationPage</h3>
+    return <div className="input_page_container">
+        <h2>RegistrationPage</h2>
         <Auth authType="register" />
     </div>
 }

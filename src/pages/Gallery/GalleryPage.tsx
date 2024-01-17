@@ -3,6 +3,7 @@ import styles from './styles.module.css'
 import axios from 'axios'
 import Slider from "react-slick"
 import { IResponseDataType } from '../../types'
+import { GalleryItem } from './GalleryItem'
 
 
 export const GalleryPage = () => {
@@ -37,14 +38,8 @@ export const GalleryPage = () => {
             {images ? (<>
                 {images.map((image) =>
                     <div className={styles.item}
-
                     >
-                        <div className={styles.imageContainer} style={{
-                            backgroundImage: `url(${image.url})`
-                        }}></div>
-                        <span>albumId: {image.albumId}</span>
-                        <span>thumbnailUrl: {image.thumbnailUrl}</span>
-
+                        <GalleryItem {...image} />
                     </div>
                 )}
             </>) : ('loading...')}
@@ -52,7 +47,7 @@ export const GalleryPage = () => {
         {images ? (<>
             <Slider {...settings}>
                 {images.map((image) => <div className={styles.item}>
-                    <div className={styles.sliderImage}><img src={image.url} alt="" width={'600px'} height={'600px'} /></div>
+                    <div className={styles.sliderImage}><GalleryItem {...image} /></div>
                     <span>{image.id}</span>
                 </div>)}
             </Slider>

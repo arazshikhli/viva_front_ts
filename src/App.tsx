@@ -9,7 +9,8 @@ import { AboutPage } from './pages/About/AboutPage';
 import { GalleryPage } from './pages/Gallery/GalleryPage';
 import { LoginPage } from './pages/Login/LoginPage';
 import { RegistrationPage } from './pages/Registration/RegistrationPage';
-
+import { AdminPage } from './pages/Admin/AdminPage';
+import { RequireAuth } from './hoc/RequireAuth'
 function App() {
   return (
     <div className="wrapper">
@@ -21,6 +22,9 @@ function App() {
           <Route path='/contacts' element={<ContactsPage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/registration' element={<RegistrationPage />} />
+          <Route path='/admin' element={<RequireAuth>
+            <AdminPage />
+          </RequireAuth>} />
         </Route>
       </Routes>
     </div>
